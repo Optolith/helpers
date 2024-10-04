@@ -15,12 +15,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: Install Node.js dependencies
         run: npm ci
       - name: Compile TypeScript files
-        run: npm run ts:build
+        run: npm run build
       - name: Run tests
         run: npm test
