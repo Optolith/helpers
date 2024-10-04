@@ -1,0 +1,8 @@
+.github
+*.tsbuildinfo
+.versionrc.json
+.vscode
+CODEOWNERS
+src
+test
+tsconfig.json
