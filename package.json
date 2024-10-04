@@ -1,6 +1,6 @@
 {
   "name": "@optolith/helpers",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A set of JavaScript helper functions for multiple Optolith packages.",
   "main": "lib/index.js",
   "scripts": {
