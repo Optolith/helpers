@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.1](https://github.com/Optolith/helpers/compare/v0.2.0...v0.2.1) (2024-10-06)
+
+
+### Features
+
+* **typeSafety:** add option to customize error message ([3c0237a](https://github.com/Optolith/helpers/commit/3c0237a413fc7e4da041e2cfaa76a530d357cce7))
+
 ## [0.2.0](https://github.com/Optolith/helpers/compare/v0.1.3...v0.2.0) (2024-10-04)
 
 
