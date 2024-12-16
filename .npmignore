@@ -1,9 +1,0 @@
-.github
-.prettierrc.yml
-*.tsbuildinfo
-.versionrc.json
-.vscode
-CODEOWNERS
-src
-test
-tsconfig.json

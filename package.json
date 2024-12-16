@@ -2,7 +2,11 @@
   "name": "@optolith/helpers",
   "version": "0.2.1",
   "description": "A set of JavaScript helper functions for multiple Optolith packages.",
-  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "AUTHORS",
+    "CHANGELOG.md"
+  ],
   "exports": {
     "./*": "./lib/*.js"
   },
