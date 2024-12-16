@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.2](https://github.com/Optolith/helpers/compare/v0.2.1...v0.2.2) (2024-12-16)
+
+
+### Features
+
+* add Result type ([19b619b](https://github.com/Optolith/helpers/commit/19b619b768855c70cb1dc4044e58cba971974585))
+
 ## [0.2.1](https://github.com/Optolith/helpers/compare/v0.2.0...v0.2.1) (2024-10-06)
 
 
