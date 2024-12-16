@@ -14,13 +14,21 @@ export const plusMinus = "\xB1"
  * Forces signing on the given number, returning `undefined` on zero.
  */
 export const signIgnoreZero = (x: number): string | undefined =>
-  x > 0 ? `+${x}` : x < 0 ? `${minus}\u2060${Math.abs(x)}` : undefined
+  x > 0
+    ? `+${x.toString()}`
+    : x < 0
+    ? `${minus}\u2060${Math.abs(x).toString()}`
+    : undefined
 
 /**
  * Forces signing on the given number.
  */
 export const sign = (x: number): string =>
-  x > 0 ? `+${x}` : x < 0 ? `${minus}\u2060${Math.abs(x)}` : "0"
+  x > 0
+    ? `+${x.toString()}`
+    : x < 0
+    ? `${minus}\u2060${Math.abs(x).toString()}`
+    : "0"
 
 /**
  * Returns the sign of the given number. Returns `undefined` if the number is

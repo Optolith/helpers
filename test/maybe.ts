@@ -100,7 +100,11 @@ describe(combine.name, () => {
   it("returns a maybe that contains nothing if either input maybe contains nothing", () => {
     const maybe1 = Just("hello")
     const maybe2 = Nothing
-    const result = combine(maybe1, maybe2, (value1, value2) => value1 + value2)
+    const result = combine(
+      maybe1,
+      maybe2,
+      (value1, value2) => value1 + (value2 as string)
+    )
     assert.deepEqual(result, { tag: "Nothing" })
   })
 

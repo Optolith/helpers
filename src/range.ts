@@ -12,7 +12,9 @@ export const range = (bounds: RangeBounds): number[] => {
   const [start, end] = bounds
 
   if (start > end) {
-    throw new RangeError("The upper bound must be greater than or equal to the lower bound.")
+    throw new RangeError(
+      "The upper bound must be greater than or equal to the lower bound."
+    )
   }
 
   return Array.from({ length: end - start + 1 }, (_, i) => i + start)
@@ -32,7 +34,7 @@ export const isInRange = (bounds: RangeBounds, value: number): boolean =>
 export const indexInRange = (bounds: RangeBounds, value: number) => {
   if (!isInRange(bounds, value)) {
     throw new RangeError(
-      `indexInRange: index for ${value} is out of range (${bounds[0]}...${bounds[1]})`,
+      `indexInRange: index for ${value.toString()} is out of range (${bounds[0].toString()}...${bounds[1].toString()})`
     )
   }
 

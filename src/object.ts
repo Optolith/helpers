@@ -4,7 +4,7 @@
  */
 export const mapObject = <T extends object, U>(
   object: T,
-  map: (value: T[keyof T], key: keyof T) => U | undefined,
+  map: (value: T[keyof T], key: keyof T) => U | undefined
 ): { [key in keyof T]: Exclude<U, undefined> } => {
   const result: { [key in keyof T]: Exclude<U, undefined> } = {} as never
 

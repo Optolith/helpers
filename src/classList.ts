@@ -6,7 +6,7 @@ export const classList = (
   ...cls: (string | null | undefined | Record<string, boolean | undefined>)[]
 ): string =>
   cls
-    .flatMap(cl => {
+    .flatMap((cl) => {
       if (cl === null || cl === undefined) {
         return []
       } else if (typeof cl === "string") {

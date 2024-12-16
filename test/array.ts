@@ -203,7 +203,7 @@ describe("reduceWhile", () => {
   it("should return the initial value for an empty array", () => {
     const result = reduceWhile(
       [],
-      (acc, value) => acc + value,
+      (acc, value) => acc + (value as number),
       () => false,
       10
     )

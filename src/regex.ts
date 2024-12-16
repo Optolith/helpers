@@ -2,7 +2,8 @@
  * Checks if the provided string is a string representation of a natural number.
  * @param test The string to test.
  */
-export const isNaturalNumber = (test: string) => /^(?:0|[1-9][0-9]*)$/u.test(test)
+export const isNaturalNumber = (test: string) =>
+  /^(?:0|[1-9][0-9]*)$/u.test(test)
 
 /**
  * Checks if the provided string is a string representation of an integer.
@@ -15,7 +16,8 @@ export const isInteger = (test: string) => /^(?:0|-?[1-9][0-9]*)$/u.test(test)
  * number. Both `.` and `,` are accepted as decimal separators.
  * @param test The string to test.
  */
-export const isFloat = (test: string) => /^(?:(?:0|-?[1-9][0-9]*)(?:[.,][0-9]+)?)$/u.test(test)
+export const isFloat = (test: string) =>
+  /^(?:(?:0|-?[1-9][0-9]*)(?:[.,][0-9]+)?)$/u.test(test)
 
 /**
  * Checks if the provided string either is an empty string or passes the given

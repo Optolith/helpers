@@ -22,5 +22,7 @@ jobs:
         run: npm ci
       - name: Compile TypeScript files
         run: npm run build
+      - name: Run lining
+        run: npm lint
       - name: Run tests
         run: npm test

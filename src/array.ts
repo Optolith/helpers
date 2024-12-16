@@ -99,12 +99,12 @@ export const count = <T>(
 export const countBy = <T, K extends string | number | symbol>(
   arr: T[],
   fn: (value: T, index: number) => K
-): { [key in K]: number } =>
-  arr.reduce((acc, value, index) => {
+): Partial<Record<K, number>> =>
+  arr.reduce<Partial<Record<K, number>>>((acc, value, index) => {
     const key = fn(value, index)
     acc[key] = (acc[key] ?? 0) + 1
     return acc
-  }, {} as { [key in K]: number })
+  }, {})
 
 /**
  * Counts the number of elements the function returns the same values for and
@@ -113,14 +113,14 @@ export const countBy = <T, K extends string | number | symbol>(
 export const countByMany = <T, K extends string | number | symbol>(
   arr: T[],
   fn: (value: T, index: number) => K[]
-): { [key in K]: number } =>
-  arr.reduce((acc, value, index) => {
+): Partial<Record<K, number>> =>
+  arr.reduce<Partial<Record<K, number>>>((acc, value, index) => {
     const keys = fn(value, index)
     unique(keys).forEach((key) => {
       acc[key] = (acc[key] ?? 0) + 1
     })
     return acc
-  }, {} as { [key in K]: number })
+  }, {})
 
 /**
  * Partitions an array into two arrays based on a predicate.
@@ -178,7 +178,7 @@ export const reduceWhile = <T, U>(
   let acc = initial
   let index = 0
   while (index < arr.length && !pred(acc)) {
-    acc = fn(acc, arr[index]!, index)
+    acc = fn(acc, arr[index] as T, index)
     index++
   }
   return acc

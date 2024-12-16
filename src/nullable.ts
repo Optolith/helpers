@@ -1,7 +1,9 @@
 /**
  * Extracts `null` and `undefined` from a type.
  */
-export type Nullish<T = null | undefined> = T extends null | undefined ? T : never
+export type Nullish<T = null | undefined> = T extends null | undefined
+  ? T
+  : never
 
 /**
  * Checks if a value is `null` or `undefined`.
@@ -12,13 +14,16 @@ export const isNullish = <T>(value: T): value is Exclude<T, NonNullable<T>> =>
 /**
  * Checks if a value is not `null` or `undefined`.
  */
-export const isNotNullish = <T>(value: T): value is NonNullable<T> => !isNullish(value)
+export const isNotNullish = <T>(value: T): value is NonNullable<T> =>
+  !isNullish(value)
 
 /**
  * Maps a value to another value if it is not `null` or `undefined`.
  */
-export const mapNullable = <T, U>(value: T, map: (value: NonNullable<T>) => U): U | Nullish<T> =>
-  isNotNullish(value) ? map(value) : (value as Nullish<T>)
+export const mapNullable = <T, U>(
+  value: T,
+  map: (value: NonNullable<T>) => U
+): U | Nullish<T> => (isNotNullish(value) ? map(value) : (value as Nullish<T>))
 
 /**
  * Maps a value to another value if it is not `null` or `undefined`, otherwise
@@ -27,7 +32,7 @@ export const mapNullable = <T, U>(value: T, map: (value: NonNullable<T>) => U): 
 export const mapNullableDefault = <T, U>(
   value: T,
   map: (value: NonNullable<T>) => U,
-  defaultValue: U,
+  defaultValue: U
 ): U => (isNotNullish(value) ? map(value) : defaultValue)
 
 /**
@@ -51,15 +56,21 @@ export const nullableToArray = <T>(value: T): NonNullable<T>[] =>
  */
 export function ensure<T, T1 extends T>(
   value: T,
-  predicate: (value: T) => value is T1,
+  predicate: (value: T) => value is T1
 ): T1 | undefined
 /**
  * Returns the value if it matches the given predicate, otherwise `undefined`.
  */
-export function ensure<T>(value: T, predicate: (value: T) => boolean): T | undefined
+export function ensure<T>(
+  value: T,
+  predicate: (value: T) => boolean
+): T | undefined
 /**
  * Returns the value if it matches the given predicate, otherwise `undefined`.
  */
-export function ensure<T>(value: T, predicate: (value: T) => boolean): T | undefined {
+export function ensure<T>(
+  value: T,
+  predicate: (value: T) => boolean
+): T | undefined {
   return predicate(value) ? value : undefined
 }
