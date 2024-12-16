@@ -16,9 +16,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm ci
-      - run: npm test
-      - run: npm lint
+      - name: Install Node.js dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
+      - name: Run linting
+        run: npm run lint
 
   publish-npm:
     needs: test
@@ -32,8 +35,11 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm run build
-      - run: npm publish --provenance --access public
+      - name: Install Node.js dependencies
+        run: npm ci
+      - name: Compile TypeScript files
+        run: npm run build
+      - name: Publish to NPM
+        run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
